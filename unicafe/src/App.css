@@ -1,0 +1,23 @@
+button {
+    background-color: white;
+    border: none;
+    box-shadow:  1px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 0 10 0 10 ;
+    margin: 0 3px ;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+button:active{
+    transform:scale(0.95);
+}
+
+p {
+    font-size: large;
+    font-weight: bold;
+}
