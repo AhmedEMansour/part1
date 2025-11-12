@@ -13,7 +13,10 @@ const StatisticLine = ({
   text, value
 }) => {
   return(
-    <>{text} {value}</>
+        <tr>
+        <td>{text}</td>
+        <td>{value}</td>
+        </tr>
   )
 }
 
@@ -24,20 +27,24 @@ good, neutral, bad, total, average, positive
     <div>
       <h2>statistics</h2>
       {isNaN(average)? <h3>No feedback given</h3>:
-      <p>
-        <StatisticLine text = "good" value = {good}/> <br/>
-        <StatisticLine text = "neutral" value = {neutral}/>  <br/>
-        <StatisticLine text = "bad" value = {bad}/>  <br />
-        <StatisticLine text = "all" value = {total}/>  <br />
+      
+        <table>
+          <tbody>
+        <StatisticLine text = "good" value = {good}/> 
+        <StatisticLine text = "neutral" value = {neutral}/>  
+        <StatisticLine text = "bad" value = {bad}/> 
+        <StatisticLine text = "all" value = {total}/>  
         {
           isNaN(average) ? 
           <StatisticLine text = "average" value = "0" /> :
           <>
-          <StatisticLine text = "average" value = {average}/> <br/>
-          <StatisticLine text = "positive" value = {positive.toFixed(13)}/> %
+          <StatisticLine text = "average" value = {average.toFixed(3)}/> 
+          <StatisticLine text = "positive" value = {positive.toFixed(1) + `%`}/> 
           </>
         }
-      </p>}
+        </tbody>
+        </table>
+      }
     </div>
   )
 }
