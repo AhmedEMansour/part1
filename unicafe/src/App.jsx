@@ -7,6 +7,7 @@ good, neutral, bad, total, average, positive
   return(
     <div>
       <h2>statistics</h2>
+      {isNaN(average)? <h3>No feedback given</h3>:
       <p>
         good {good} <br/>
         neutral {neutral} <br/>
@@ -18,7 +19,7 @@ good, neutral, bad, total, average, positive
         positive {
            isNaN(positive) ? 0 : positive.toFixed(13)
         } %
-      </p>
+      </p>}
     </div>
   )
 }
